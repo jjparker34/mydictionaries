@@ -39,5 +39,18 @@ import json
 infile = open('eq_data.json','r')
 eq = json.load(infile)
 
-print(eq)
+print('Number of earthquakes: ', eq['metadata']['count'])
 
+eq_dict = {}
+for features in eq['features']:
+   properties = features['properties']
+   if properties['mag'] > 6:
+      eq_dict = {
+      'location' : properties['place'],
+      'magnitude' : properties['mag'],
+      'long' : features['geometry']['coordinates'][0],
+      'lat' : features['geometry']['coordinates'][1],
+      }
+
+print()
+print(eq_dict)
