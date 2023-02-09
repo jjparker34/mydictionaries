@@ -86,7 +86,7 @@ for i in range(0, len(eq['features'])):
 #prints eq_dict
 
 
-   #print(eq_dict, '\n')
+print(eq_dict, '\n')
    
 
 
